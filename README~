@@ -1,0 +1,63 @@
+Software: RSA
+Author: Hy Truong Son
+Major: BSc. Computer Science
+Class: 2013 - 2016
+Institution: Eotvos Lorand University, Budapest, Hungary
+Email: sonpascal93@gmail.com
+Website: http://people.inf.elte.hu/hytruongson/
+Last update: October 10, 2015
+Copyright 2015 (c) Hy Truong Son. All rights reserved.
+
+Overall
+-------
+* RSA key generation, file encryption and file decryption
+* Fermat test for prime numbers
+* (Specific) Rabin Miller test for prime numbers
+* Sieve of Atkin to find prime numbers
+* Sieve of Sundaram
+* Sieve of Eratosthene
+
+Usage
+-----
+*** Compile:
+$ javac RSA.java
+
+*** RSA weak key generation (public key file: Public.key, private key file: Private.key):
+$ java RSA -wg 
+[Saving public key to Public.key]
+[Saving private key to Private.key]
+[Key generating is successful]
+
+*** RSA strong key generation (public key file: Public.key, private key file: Private.key):
+$ java RSA -sg 
+[Saving public key to Public.key]
+[Saving private key to Private.key]
+[Key generating is successful]
+
+*** RSA file encryption, enrypt file RSA-Algorithm.pdf to EncryptedFile.pdf with Public.key:
+$ java RSA -e RSA-Algorithm.pdf Public.key EncryptedFile.pdf 
+[Public key is loaded]
+[Successfully encrypted RSA-Algorithm.pdf to EncryptedFile.pdf]
+
+*** RSA file decryption:
+$ java RSA -d EncryptedFile.pdf Private.key DecryptedFile.pdf 
+[Private key is loaded]
+[Successfully decrypted EncryptedFile.pdf to DecryptedFile.pdf]
+
+* Fermat test:
+$ java RSA -ft 127 96 1234567897
+127 true
+96 false
+1234567897 false
+
+* Rabin Miller test:
+$ java RSA -rmt 1000000007 1234567891011
+1000000007 true
+1234567891011 false
+
+* Specific Rabin Miller test:
+$ java RSA -srmt 1000000009 987654321
+1000000009 true
+987654321 false
+
+* Sieve of Atkin, Sieve of Sundaram, Sieve of Eratosthene: Folder ~/sieve-of-primes
